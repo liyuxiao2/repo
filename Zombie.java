@@ -5,11 +5,16 @@ public class Zombie extends Actor
 {
     
     
-    public Zombie(){
-        
-    }
     public void act()
     {
-        // Add your action code here.
+        MyWorld world = (MyWorld) getWorld();
+        if(isTouching(Soldier.class)){
+            removeTouching(Soldier.class);
+            gameOver();
+        }
     }
+    public void gameOver(){
+        
+    }
+    
 }

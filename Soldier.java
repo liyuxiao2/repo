@@ -8,12 +8,35 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Soldier extends Actor
 {
-    /**
-     * Act - do whatever the Soldier wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public Soldier(){
+        
+    }
     public void act()
     {
-        // Add your action code here.
+                GreenfootImage image = getImage();
+        image.scale(60,60);
+        setImage(image);
+        
+        int x = getX();
+        int y = getY();
+        
+        if(Greenfoot.isKeyDown("down")){
+            y += 1;
+        }
+        
+        if(Greenfoot.isKeyDown("up")){
+            y -= 1;
+        }
+        
+        if(Greenfoot.isKeyDown("right")){
+            x += 1;
+        }
+        
+        if(Greenfoot.isKeyDown("left")){
+            x -= 1; 
+        }
+        
+        setLocation(x, y);
+        
     }
 }
